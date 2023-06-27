@@ -1,24 +1,40 @@
 import * as React from 'react';
+import axios, { AxiosError } from 'axios';
 import { useForm } from 'react-hook-form';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link, useNavigate } from 'react-router-dom';
+
+const baseURL = "http://localhost:4000/auth/signin";
 
 type FormData = {
     email: string;
     password: string;
   };
   
-    
+
 
 export default function SignIn() {
+  const navigate = useNavigate();
     const {
         register,
         handleSubmit,
         formState: { errors },
       } = useForm<FormData>();
     
-      const onSubmit = (data: FormData) => {
-       
-        console.log(data);
+      const onSubmit = async (data: FormData) => {
+        try {
+          const response = await axios.post(baseURL, data);
+          console.log(response.data);
+    
+          const access_token = response.data.access_token;
+          localStorage.setItem("access_token", access_token);
+          navigate('/createAccount');
+    
+        } catch (error) {
+          const axiosError = error as AxiosError;
+          if (axiosError.response) {
+            console.log(axiosError.response.data);
+          }
+        }
       };
 
   return (
@@ -74,9 +90,9 @@ export default function SignIn() {
           </button>
         </div>
         <div className='mt-8 flex flex-col gap-y-4 '>
-          <Link to='/dashboard' className=' text-center active:scale-[.98] active:duration-75 hover:scale-[1.01] ease-in-out transition-all py-3 rounded-xl bg-violet-500 text-white text-lg font-bold'>
+          <button className=' text-center active:scale-[.98] active:duration-75 hover:scale-[1.01] ease-in-out transition-all py-3 rounded-xl bg-violet-500 text-white text-lg font-bold'>
             Sign in
-          </Link>
+          </button>
         </div>
         <div className='mt-8 flex justify-center items-center'>
           <p className='font-medium text-base'>Don't have an account?</p>

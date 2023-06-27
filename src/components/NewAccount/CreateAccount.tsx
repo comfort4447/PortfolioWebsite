@@ -1,5 +1,4 @@
 import NewAccount from "../NewAccount/NewAccount"
-import Form from "../NewAccount/NewAccount"
 
 function CreateAccount() {
     return(
