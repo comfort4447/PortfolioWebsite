@@ -29,6 +29,10 @@ import img3 from "../imgs/img3.png";
       heading: "Transaction History",
       url: "/history",
     },
+    // {
+    //   icon: UilSignOutAlt,
+    //   url: "/signin",
+    // },
   ];
 
   export const cardsData = [

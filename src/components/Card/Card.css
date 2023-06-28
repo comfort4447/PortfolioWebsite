@@ -1,3 +1,30 @@
+.AccountNumberCard {
+  width: auto;
+  height: 150px;
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.accountNumber {
+  text-align: left;
+}
+
+.accountNumber h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.accountNumber span {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+
 .CompactCard {
     margin-top: 5rem;
     display: flex;
@@ -65,3 +92,10 @@
     font-size: 12px;
   }
   
+
+  @media screen and (max-width: 768px) {
+    .AccountNumberCard {
+      max-width: 100%;
+      height: auto;
+    }
+  }

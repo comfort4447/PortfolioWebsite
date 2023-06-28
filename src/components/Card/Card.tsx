@@ -6,8 +6,6 @@ import { motion } from "framer-motion";
 import axios, { AxiosError } from 'axios';
 import { UilTimes } from "@iconscout/react-unicons";
 
-
-
 interface CardProps {
   param: {
     png: any;
@@ -40,6 +38,7 @@ const Card: React.FC<CardProps> = (props) => {
         },
       });
       setAccountData(response.data);
+      console.log(setAccountData)
     } catch (error) {
       const axiosError = error as AxiosError;
       if (axiosError.response) {
@@ -49,26 +48,41 @@ const Card: React.FC<CardProps> = (props) => {
   };
 
   return (
-    <motion.div
-      className="CompactCard"
-      style={{
-        background: param.color.backGround,
-        boxShadow: param.color.boxShadow,
-      }}
-    >
-      <div className="radialBar">
-        {/* <CircularProgressbar
-          value={param.barValue}
-          text={`${param.barValue}%`}
-        /> */}
-        <span>{param.title}</span>
-      </div>
-      <div className="detail">
-        <Png />
-        {/* Display the account balance */}
-        <span>{accountData?.balance}</span>
-      </div>
-    </motion.div>
+    <>
+      <motion.div
+        className="AccountNumberCard"
+        style={{
+          background: "linear-gradient(180deg, #bb67ff 0%, #c484f3 100%)",
+          boxShadow: "0px 2px 5px rgba(0, 0, 0, 0.1)",
+        }}
+      >
+        <div className="accountNumber">
+          <h3>Account Number</h3>
+          <span>{accountData?.account_Number}</span>
+        </div>
+      </motion.div>
+
+      <motion.div
+        className="CompactCard"
+        style={{
+          background: param.color.backGround,
+          boxShadow: param.color.boxShadow,
+        }}
+      >
+        <div className="radialBar">
+          {/* <CircularProgressbar
+            value={param.barValue}
+            text={`${param.barValue}%`}
+          /> */}
+          <span>{param.title}</span>
+        </div>
+        <div className="detail">
+          <Png />
+          {/* Display the account balance */}
+          <span>{accountData?.balance}</span>
+        </div>
+      </motion.div>
+    </>
   );
 };
 
