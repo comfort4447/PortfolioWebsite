@@ -29,10 +29,16 @@ import img3 from "../imgs/img3.png";
       heading: "Transaction History",
       url: "/history",
     },
-    // {
-    //   icon: UilSignOutAlt,
-    //   url: "/signin",
-    // },
+    {
+      icon: UilUsersAlt,
+      heading: "New Account",
+      url: "/createAccount",
+    },
+    {
+      icon: UilUsersAlt,
+      heading: "Accounts",
+      url: "/listAccounts",
+    },
   ];
 
   export const cardsData = [

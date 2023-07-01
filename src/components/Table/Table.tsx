@@ -69,8 +69,8 @@ export default function BasicTable() {
       };
     } else {
       return {
-        background: "#ffadad8f",
-        color: "red",
+        background: "rgb(145 254 159 / 47%)",
+        color: "green",
       };
     }
   };

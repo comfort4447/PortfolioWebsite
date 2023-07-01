@@ -26,7 +26,10 @@ export default function SignIn() {
           console.log(response.data);
     
           const access_token = response.data.access_token;
+          const userId = response.data.userId;
+          localStorage.setItem("userId", userId);
           localStorage.setItem("access_token", access_token);
+          
           navigate('/createAccount');
     
         } catch (error) {
@@ -49,7 +52,7 @@ export default function SignIn() {
           <label className='text-lg font-medium'>
             Email
             <input
-              className='w-full border-1 border-gray-100 rounded-xl p-3 mt-1 bg-transparent'
+              className='w-full border-1 border-gray-100 rounded-xl p-3 mt-1 bg-gray-100 placeholder-gray-400::placeholder text-sm'
               placeholder='Enter your email'
               type='email'
               {...register('email', { required: 'Email is required' })}
@@ -61,7 +64,7 @@ export default function SignIn() {
           <label className='text-lg font-medium'>
             Password
             <input
-              className='w-full border-1 border-gray-100 rounded-xl p-3 mt-1 bg-transparent'
+              className='w-full border-1 border-gray-100 rounded-xl p-3 mt-1 bg-gray-100 placeholder-gray-400::placeholder text-sm'
               placeholder='Enter your password'
               type='password'
               {...register('password', { required: 'Password is required',

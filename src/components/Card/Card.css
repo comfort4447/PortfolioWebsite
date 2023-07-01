@@ -1,6 +1,6 @@
 .AccountNumberCard {
   width: auto;
-  height: 150px;
+  height: 9 rem !important;
   border-radius: 8px;
   padding: 20px;
   display: flex;

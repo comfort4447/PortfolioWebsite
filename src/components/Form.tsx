@@ -25,6 +25,8 @@ export default function SignUpForm() {
       console.log(response.data);
 
       const access_token = response.data.access_token;
+      const userId = response.data.userId;
+      localStorage.setItem("userId", userId);
       localStorage.setItem("access_token", access_token);
       navigate('/signin');
 
@@ -48,7 +50,7 @@ export default function SignUpForm() {
           <label className='text-lg font-medium'>
             Email
             <input
-              className='w-full border-1 border-gray-100 rounded-xl p-3 mt-1 bg-transparent'
+              className='w-full border-1 border-gray-100 rounded-xl p-3 mt-1 bg-gray-100 placeholder-gray-400::placeholder text-sm'
               placeholder='Enter your email'
               type='email'
               {...register('email', { required: 'Email is required' })}
@@ -60,7 +62,7 @@ export default function SignUpForm() {
           <label className='text-lg font-medium'>
             Password
             <input
-              className='w-full border-1 border-gray-100 rounded-xl p-3 mt-1 bg-transparent'
+              className='w-full border-1 border-gray-100 rounded-xl p-3 mt-1 bg-gray-100 placeholder-gray-400::placeholder text-sm'
               placeholder='Enter your password'
               type='password'
               {...register('password', {
@@ -88,8 +90,8 @@ export default function SignUpForm() {
         </div>
         <div className='mt-8 flex justify-center items-center'>
           <p className='font-medium text-base'>Already have an account?</p>
-          <Link to='/createAccount' className='text-violet-500 text-base font-medium ml-2' type='submit'>
-            Create Account
+          <Link to='/signin' className='text-violet-500 text-base font-medium ml-2' type='submit'>
+            Sign in
           </Link>
         </div>
       </form>

@@ -32,7 +32,7 @@ export default function Sidebar() {
           );
         })}
         <div className='menuItem'>
-          <UilSignOutAlt />
+          <Link to='/signin'><UilSignOutAlt /></Link>
         </div>
       </div>
     </div>

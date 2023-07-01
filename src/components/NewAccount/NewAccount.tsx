@@ -3,6 +3,7 @@ import { stringify } from 'querystring';
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
+import Sidebar from '../Siderbar/Sidebar';
 
 const baseURL = "http://localhost:4000/Accounts/addAccount";
 
@@ -13,7 +14,7 @@ account_Number: number;
   balance: number;
 };
 
-export default function Form() {
+export default function NewAccount() {
   const {
     register,
     handleSubmit,
@@ -56,7 +57,10 @@ export default function Form() {
   };
 
   return (
-    <div className='bg-white px-10 py-10 rounded-3xl border-2 border-gray'>
+    <div className='Appp'>
+      <div className='AppGlass'>
+        <Sidebar />
+    <div className='bg-white px-10 py-10 rounded-3xl border-2 border-gray mt-2 mx-auto w-2/3'>
       <h1 className='text-3xl font-semibold'>Create Account</h1>
       <p className='font-medium text-lg text-gray-500 mt-4'>
         Welcome! Create your Account
@@ -68,7 +72,7 @@ export default function Form() {
             Account Name
             <input
                 type='text'
-              className='w-full border-1 border-gray-100 rounded-xl p-3 mt-1 bg-transparent'
+              className='w-full border-1 border-gray-100 rounded-xl p-3 mt-1 bg-gray-100 placeholder-gray-400::placeholder text-sm'
               placeholder='Enter your account name'
               {...register('AccountName', { required: 'Account name is required' })}
             />
@@ -80,7 +84,7 @@ export default function Form() {
             Account Number
             <input
              type='number'
-              className='w-full border-1 border-gray-100 rounded-xl p-3 mt-1 bg-transparent'
+              className='w-full border-1 border-gray-100 rounded-xl p-3 mt-1 bg-gray-100 placeholder-gray-400::placeholder text-sm'
               placeholder='Enter your account number'
               {...register('account_Number', { required: 'Account number is required' })}
             />
@@ -91,7 +95,7 @@ export default function Form() {
           <label className='text-lg font-medium'>
             PIN
             <input
-              className='w-full border-1 border-gray-100 rounded-xl p-3 mt-1 bg-transparent'
+              className='w-full border-1 border-gray-100 rounded-xl p-3 mt-1 bg-gray-100 placeholder-gray-400::placeholder text-sm'
               placeholder='Enter your PIN'
               type='number'
               {...register('pin', {
@@ -109,7 +113,7 @@ export default function Form() {
           <label className='text-lg font-medium'>
             Opening Balance
             <input
-              className='w-full border-1 border-gray-100 rounded-xl p-3 mt-1 bg-transparent'
+              className='w-full border-1 border-gray-100 rounded-xl p-3 mt-1 bg-gray-100 placeholder-gray-400::placeholder text-sm'
               placeholder='Enter your opening balance'
               type='number'
               {...register('balance', { required: 'Opening balance is required' })}
@@ -122,13 +126,15 @@ export default function Form() {
             Create Account
           </button>
         </div>
-        <div className='mt-6 flex justify-center items-center'>
+        <div className='mt-4 flex justify-center items-center'>
           <p className='font-medium text-base'>Already have an account?</p>
           <Link to='/signin' className='text-violet-500 text-base font-medium ml-2'>
             Sign in
           </Link>
         </div>
       </form>
+    </div>
+    </div>
     </div>
   );
 }
