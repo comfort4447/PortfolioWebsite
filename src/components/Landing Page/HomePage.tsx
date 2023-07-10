@@ -10,6 +10,13 @@ import banking from '../../imgs/banking.png';
 import financing from '../../imgs/financing.png';
 import contact from '../../imgs/contact.png';
 import growth from '../../imgs/growth.png';
+import appstore from '../../imgs/appstore.svg'
+import googleplay from '../../imgs/googleplay.png'
+import twitter from '../../imgs/twitter.svg'
+import instagram from '../../imgs/instagram.svg'
+import youtube from '../../imgs/youtube.svg'
+import facebook from '../../imgs/facebook.svg'
+import linkedin from '../../imgs/linkedin.svg'
 import "./HomePage.css";
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
@@ -65,9 +72,9 @@ export default function HomePage() {
                     <div className="row-card col-md-7">
                         <h2 className="about-header1 sm-fs-4">Banking <br/>made easy</h2>
                         <p className='row-text'>Spend, save and manage your money, all in one place. Open a full <br></br> UK bank account from your phone, for free.</p>
-                        <button className='btn-started'>
+                        <a href='/signup'><button className='btn-started'>
                             Get Started
-                        </button>
+                        </button></a>
                     </div>
                     <div className='img_bounce col-md-5'>
                         <img className="bounce-image img-fluid" src={reel} alt="aboutimage"/>
@@ -116,9 +123,9 @@ export default function HomePage() {
             <Card.Text style={{ textAlign: 'left', height: '80px' }}>
               Based on specific requirements to bridge funding gaps with flexible repayment structures.
             </Card.Text>
-            <button className='btn-started'>
+            <a href='/signup'><button className='btn-started'>
                             Get Started
-                        </button>
+                        </button></a>
           </Card.Body>
         </Card>
         <Card
@@ -132,9 +139,9 @@ export default function HomePage() {
             <Card.Text style={{ textAlign: 'left', height: '100px' }}>
               For over two decades, we have been taking actionable steps towards sustainability in a rapidly changing world.
             </Card.Text>
-            <button className='btn-started'>
+            <a href='/signup'><button className='btn-started'>
                             Get Started
-                        </button>
+                        </button></a>
           </Card.Body>
         </Card>
         <Card
@@ -148,9 +155,9 @@ export default function HomePage() {
             <Card.Text style={{ textAlign: 'left', height: '100px' }}>
               Based on specific requirements to bridge funding gaps with flexible repayment structures.
             </Card.Text>
-            <button className='btn-started'>
+            <a href='/signup'><button className='btn-started'>
                             Get Started
-                        </button>
+                        </button></a>
           </Card.Body>
         </Card>
         <Card
@@ -164,9 +171,9 @@ export default function HomePage() {
             <Card.Text style={{ textAlign: 'left', height: '80px' }}>
               Based on specific requirements to bridge funding gaps with flexible repayment structures.
             </Card.Text>
-            <button className='btn-started'>
+            <a href='/signup'><button className='btn-started'>
                             Get Started
-                        </button>
+                        </button></a>
           </Card.Body>
         </Card>
         {/* Add more cards here */}
@@ -187,6 +194,78 @@ export default function HomePage() {
         <img src={contact} alt="" />
         </div>
     </div>
+    <>
+        <div className='footer'>
+          <div className='footer-box'>
+            <h2 className='top-text'>Help us build the kind of bank you want to use</h2>
+            <p className='text-p'>Download the Nairapay app on iOS or Android and join more than 7 million people who've changed the way<br/>they bank.</p>
+            <div className='footer-img'>
+            <img src={appstore} className='appstore' alt="app-logo"/>
+            <img src={googleplay} className='google'  alt="google-logo"/>
+            </div>
+          </div>
+          
+        </div>
+        <div className='footer-2'>
+            <div className='footer-first'>
+                <h3 className='logo-text'>NAIRAPAY</h3>
+                <div className='logo-2'>
+                <img src={appstore} className='appstore1' alt="app-logo"/>
+                <img src={googleplay} className='google1' google-logo/>
+                </div>
+
+            </div>
+            <div className='footer-list'>
+                <ul className='list-t'>
+                    <li>About us</li>
+                    <li>Nairapay us</li>
+                    <li>Blog</li>
+                    <li>Press</li>
+                    <li>Careers</li>
+                    <li>Our social program</li>
+                    <li>Accessibility</li>
+                    <li>Lost your phone and card</li>
+                    <li>Investor Information</li>
+                </ul>
+                <ul className='list-t'>
+                    <li>Supporting all our <br/>customers</li>
+                    <li>How we can support<br/>with money worries</li>
+                    <li>Helping everyone <br/>belong at Nairapay</li>
+                    <li>How we protect you</li>
+                    <li>Our tone of voice</li>
+                    <li>Business Accounts</li>
+                    <li>Modern Slavery<br/>Statement</li>
+                    <li>FAQ</li>
+                    
+                </ul>
+                <ul className='list-t'>
+                    <li>Terms & Conditions</li>
+                    <li>FSCS information</li>
+                    <li>Privacy Notice</li>
+                    <li>Cookie Notice</li>
+                    <li>Browser Support Policy</li>
+                    <li>Mobile Operating<br/>System Support Policy</li>
+                    <li>Information about our<br/>Personal Current<br/>Account Services</li>
+                    <li>App and Open Banking<br/>Performance</li>
+                    
+                </ul>
+                <div className="footer-icon">
+                <img src={twitter} className='twitter' alt="twitter-logo"/>
+                <img src={instagram} className='instagram'  alt="instagram-logo"/>
+                <img src={facebook} className='facebook' alt="facebook-logo"/>
+                <img src={linkedin} className='linkedin' alt="linkedin-logo"/>
+                <img src={youtube} className='youtube'  alt="youtube-logo"/>
+                </div>
+                
+            </div>
+            <div className='lower-text'>
+                <h3 className='ttp-title'>Existing customers can get help via the app</h3>
+                <p className='ttp-text'>Nairapay Bank Limited is a company registered in Nigeria and Wales (No. 09446231). Nairapay Bank Ltd is authorised by the <br/>
+                Prudential Regulation Authority (PRA) and regulated by the Financial Conduct Authority and the Prudential Regulation<br/>
+                 Authority. Our Financial Services Register number is 730427.</p>
+            </div>
+          </div>
+        </>
     
     </div>
   );
